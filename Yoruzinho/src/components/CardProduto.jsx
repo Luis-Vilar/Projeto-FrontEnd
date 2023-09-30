@@ -1,6 +1,7 @@
 import React from "react";
 import { Card, Col, Row, Button } from "react-bootstrap";
 import ModalProduto from "./ModalProduto";
+import medicamento_imagem from "../assets/medicamento_imagem.jpg";
 
 const CardProduto = ({
   medicamento,
@@ -18,12 +19,11 @@ const CardProduto = ({
     valorUnitario: valorUnitario,
     tipo: tipo,
     descricao: descricao,
-    imagem: imagem,
   };
   return (
     <>
       <Card as={Col} md="3">
-        <Card.Img variant="top" src={produto.imagem} />
+        <Card.Img variant="top" src={medicamento_imagem} />
         <Card.Body>
           <Card.Title>{`${produto.medicamento} ${produto.dosagem} ${produto.laboratorio}`}</Card.Title>
         </Card.Body>
@@ -40,7 +40,7 @@ const CardProduto = ({
             laboratorio={produto.laboratorio}
             valorUnitario={produto.valorUnitario}
             tipo={produto.tipo}
-            imagem={produto.imagem}
+            imagem={medicamento_imagem}
           />
         </Row>
       </Card>

@@ -9,9 +9,11 @@ export const Map = () => {
 
   useEffect(() => {
     loadEstablecimentos();
+    
   }, []);
 
   const establecimentos = getEstablecimentos();
+  console.log(establecimentos);
   const florianopolis = [-27.5969, -48.5495];
   const zoomLevel = 15;
 
@@ -34,7 +36,7 @@ export const Map = () => {
           <Popup>
             <h4>{establecimento.razaoSocial}</h4>
             <p>{`CNPJ : ${establecimento.cnpj}`}</p>
-            <p>{`Nome Fantasia : ${establecimento.nomeFantasia}`}</p>
+            <p>{`Nome Fantasia : ${establecimento.nome_fantasia}`}</p>
             <p>{`E-mail : ${establecimento.email}`}</p>
             {establecimento.telefone && (
               <p>{`Telefone : ${establecimento.celular}`}</p>

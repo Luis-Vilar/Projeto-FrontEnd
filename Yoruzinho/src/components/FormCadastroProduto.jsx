@@ -49,7 +49,7 @@ const FormCadastroProduto = () => {
           </Form.Group>
         </Row>
         <Row className="mb-3">
-          <Form.Group as={Col} md="4" controlId="dosagem">
+          <Form.Group as={Col} md="3" controlId="dosagem">
             <Form.Label>Dosagem</Form.Label>
             <Form.Control required type="text" placeholder="Dosagem" />
             <Form.Control.Feedback>OK</Form.Control.Feedback>
@@ -57,21 +57,39 @@ const FormCadastroProduto = () => {
               Por favor preencha este campo com a Dosagem.
             </Form.Control.Feedback>
           </Form.Group>
-          <Form.Group as={Col} md="4" controlId="tipo">
-            <Form.Label>Tipo</Form.Label>
+          <Form.Group as={Col} md="3" controlId="unidade_dosagem">
+            <Form.Label>Unidade Dosagem</Form.Label>
             <Form.Select required>
               <option value="">Selecione</option>
-              <option value="Medicamento Controlado">
-                Medicamento Controlado
+              <option value="mg">mg</option>
+              <option value="mcg">mcg</option>
+              <option value="g">g</option>
+              <option value="mL">mL</option>
+              <option value="%">%</option>
+              <option value="Outro">Outro</option>
+            </Form.Select>
+            <Form.Control.Feedback>OK</Form.Control.Feedback>
+            <Form.Control.Feedback type="invalid">
+              Por favor selecione o tipo de dossagem.
+            </Form.Control.Feedback>
+          </Form.Group>
+
+
+          <Form.Group as={Col} md="3" controlId="tipo">
+            <Form.Label>Tipo de Medicamento</Form.Label>
+            <Form.Select required>
+              <option value="">Selecione</option>
+              <option value="Controlado">
+                Controlado
               </option>
-              <option value="Medicamento Comum">Medicamento Comum</option>
+              <option value="Não Controlado"> Não Controlado</option>
             </Form.Select>
             <Form.Control.Feedback>OK</Form.Control.Feedback>
             <Form.Control.Feedback type="invalid">
               Por favor selecione o tipo de medicamento.
             </Form.Control.Feedback>
           </Form.Group>
-          <Form.Group as={Col} md="4" controlId="valorUnitario">
+          <Form.Group as={Col} md="3" controlId="valorUnitario">
             <Form.Label>Valor Unitário</Form.Label>
             <Form.Control
               required
