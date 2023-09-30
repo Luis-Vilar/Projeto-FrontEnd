@@ -6,19 +6,12 @@ import logo from "../assets/logo.png";
 import { useContexto } from "../context/useContexto";
 
 const Login = () => {
-  /* Para garantir que o servidor na 
-  Replit acorde quando alguem accessar ao site
-  vamos fazer uma chamada para o servidor
-  assim que  for montado o componente da rota inicial
-  */
+
   const { loadEstablecimentos } = useContexto();
-  useEffect(() => {
-    loadEstablecimentos();
-  }, []);
+
   return (
     <>
       <HeaderLogin />
-
       <Row style={{ height: "100vh" }} className="align-items-center">
         <Col md={6} className="mx-auto align-itens-center">
           <Image src={logo} fluid />

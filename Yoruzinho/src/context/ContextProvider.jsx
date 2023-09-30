@@ -65,15 +65,17 @@ function ContextProvider({ children }) {
       })
       .then((response) => {
         //alert para mensagem de sucesso caso estabelecimento seja adicionado ao banco de dados
-        console.log(response);
+        // console.log(response);
         alert(
           `Establecimento  ${establecimento.nome_fantasia} foi adiccionado!`
         );
       })
       .catch((error) => {
         //alert para mensagem de erro caso establecimento nao seja adicionado ao banco de dados
+        console.log(error);
+
         alert(
-          `Infelizmente   ${establecimento.nome_fantasia} não foi adiccionado!`
+          `${error}  Infelizmente ${establecimento.nome_fantasia} não foi adiccionado!`
         );
         console.log(error);
       });
