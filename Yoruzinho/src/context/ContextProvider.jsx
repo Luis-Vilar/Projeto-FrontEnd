@@ -24,7 +24,7 @@ function ContextProvider({ children }) {
   //estado para controlar o estado de login para as rotas privadas
   const [loggedIn, setLoggedIn] = useState(false);
   // variaves para o endereco do API
-  const url = "http://localhost:3000";
+  const url = "https://enthusiastic-rose-whale.cyclic.app";
   // variaves para os endpoints da API
   const endpointEstablecimentos = "/api/depositos";
   const endpointProdutos = "/api/medicamentos";

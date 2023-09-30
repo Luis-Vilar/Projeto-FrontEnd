@@ -10,7 +10,7 @@ const FormLogin = () => {
   const loginApi = async (email, senha) => {
     try {
       const response = await axios.post(
-        "http://localhost:3000/api/usuarios/login",
+        "https://enthusiastic-rose-whale.cyclic.app/api/usuarios/login",
         {
           email,
           senha,
