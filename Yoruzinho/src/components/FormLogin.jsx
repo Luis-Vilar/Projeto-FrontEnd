@@ -3,9 +3,11 @@ import { Form, Button, Row, Col, Container } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import { useContexto } from "../context/useContexto";
 import axios from "axios";
+import FormCadastroUsuario from "./FormCadastroUsuario";
 
 const FormLogin = () => {
   const { login, validarSenha, validarUsuario } = useContexto();
+  const [mostrarCadastro, setMostrarCadastro] = React.useState(false);
 
   const loginApi = async (email, senha) => {
     try {
@@ -36,7 +38,9 @@ const FormLogin = () => {
       : alert("Email ou senha incorretos");
   };
 
-  return (
+  return  mostrarCadastro  ? (
+    <FormCadastroUsuario setMostrarCadastro= {setMostrarCadastro}/>
+  ) : (
     <Container>
       <Row>
         <Col md={6}>
@@ -57,6 +61,9 @@ const FormLogin = () => {
             <div className="d-flex justify-content-end">
               <Button variant="light" type="submit">
                 Entrar
+              </Button>
+              <Button variant="light" onClick={() => setMostrarCadastro(true)}>
+                Cadastrar
               </Button>
             </div>
           </Form>
