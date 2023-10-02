@@ -16,6 +16,8 @@ const FormCadastroEstablecimento = () => {
     estado,
     bairro,
     cep,
+    latitude,
+    longitude,
     handleCepChange,
   } = useContexto();
 
@@ -185,6 +187,7 @@ const FormCadastroEstablecimento = () => {
             type="number"
             step="0.00000001"
             placeholder="Latitude"
+            value={latitude}
           />
           <Form.Control.Feedback>OK</Form.Control.Feedback>
           <Form.Control.Feedback type="invalid">
@@ -198,6 +201,7 @@ const FormCadastroEstablecimento = () => {
             type="number"
             step="0.00000001"
             placeholder="Longitude"
+            value={longitude}
           />
           <Form.Control.Feedback>OK</Form.Control.Feedback>
           <Form.Control.Feedback type="invalid">

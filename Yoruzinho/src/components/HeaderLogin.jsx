@@ -5,7 +5,7 @@ import LogoHeader from "../assets/LogoHeader.png";
 
 const HeaderLogin = () => {
   return (
-    <Navbar  bg="dark" variant="dark" expand="lg" fixed='bottom'>
+    <Navbar  bg="dark" variant="dark" expand="lg" >
     <Container>
       <Navbar.Brand >
       <img

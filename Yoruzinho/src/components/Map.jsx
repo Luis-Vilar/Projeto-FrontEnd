@@ -9,10 +9,9 @@ export const Map = () => {
 
   useEffect(() => {
     loadEstablecimentos();
-    
   }, []);
 
-  const establecimentos = getEstablecimentos();
+  const establecimentos = getEstablecimentos() || [];
   console.log(establecimentos);
   const florianopolis = [-27.5969, -48.5495];
   const zoomLevel = 15;

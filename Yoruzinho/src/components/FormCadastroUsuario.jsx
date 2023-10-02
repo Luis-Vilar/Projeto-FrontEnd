@@ -68,7 +68,7 @@ const FormCadastroUsuario = (props) => {
   const redireccionar = useNavigate();
 
   return (
-    <Container>
+    <Container className="mx-auto">
       <Form className="mx-auto " onSubmit={handleSubmit}>
         <Row>
           {" "}
@@ -118,12 +118,13 @@ const FormCadastroUsuario = (props) => {
             </Form.Group>
           </Col>
         </Row>
-        <div className="d-flex justify-content-end">
-          <Button variant="ligth" type="submit">
-            Cadastrar
-          </Button>
-          <Button variant="danger" onClick={voltar}>
+        <div className="d-flex justify-content-end gap-1 " >
+       
+          <Button variant="secondary" onClick={voltar}>
             Voltar
+          </Button>
+          <Button variant="dark" type="submit">
+            Cadastrar
           </Button>
         </div>
       </Form>

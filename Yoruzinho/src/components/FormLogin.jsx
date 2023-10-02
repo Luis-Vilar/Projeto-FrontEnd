@@ -59,11 +59,11 @@ const FormLogin = () => {
               <Form.Control type="password" placeholder="senha" required />
             </Form.Group>
             <div className="d-flex justify-content-end">
-              <Button variant="light" type="submit">
-                Entrar
-              </Button>
-              <Button variant="light" onClick={() => setMostrarCadastro(true)}>
+            <Button variant="secondary" onClick={() => setMostrarCadastro(true)}>
                 Cadastrar
+              </Button>
+              <Button variant="dark" type="submit">
+                Entrar
               </Button>
             </div>
           </Form>
