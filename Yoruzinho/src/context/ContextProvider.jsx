@@ -12,6 +12,8 @@ function ContextProvider({ children }) {
   const [cidade, setCidade] = useState("");
   const [estado, setEstado] = useState("");
   const [bairro, setBairro] = useState("");
+  const[latitude, setLatitude] = useState("");
+  const[longitude, setLongitude] = useState("");
   const [cep, setCep] = useState("");
   // estados para produtos e busca de produtos
   const [produtos, setProdutos] = useState([]);
@@ -197,14 +199,19 @@ function ContextProvider({ children }) {
   //função para atualizar os campos do formulário de estabelecimentos
   const atualizarCampos = (cep) => {
     //obter dados da api viacep e atualizar os campos do formulário de estabelecimentos
+    /**
+     * {"cep":"88058355","state":"SC","city":"Florianópolis","neighborhood":"Ingleses do Rio Vermelho","street":"Servidão do Gerivá","service":"correios","location":{"type":"Point","coordinates":{"longitude":"-48.4115107","latitude":"-27.4540504"}}}
+     */
     axios
-      .get(`https://viacep.com.br/ws/${cep}/json/`)
+      .get(`https://brasilapi.com.br/api/cep/v2/{${cep}}`)
       .then((response) => {
         const { data } = response;
-        setLogadouro(data.logradouro);
-        setCidade(data.localidade);
-        setEstado(data.uf);
-        setBairro(data.bairro);
+        setLogadouro(data.street);
+        setCidade(data.city);
+        setEstado(data.state);
+        setBairro(data.neighborhood);
+        setLatitude(data.location.coordinates.latitude);
+        setLongitude(data.location.coordinates.longitude);
       })
       .catch((error) => {
         //alert para mensagem de erro caso o cep nao seja encontrado
@@ -315,6 +322,8 @@ function ContextProvider({ children }) {
     estado,
     bairro,
     cep,
+    latitude,
+    longitude,
     atualizarCampos,
     handleCepChange,
     login,
